@@ -1,11 +1,11 @@
 import React from 'react';
 import Menu from './Menu';
 
-export default function MenuList ({menus}){
+export default function MenuList ({menus, deleteMenu}){
   return (
     <div>
       {menus.map(m => {
-       return <Menu key={m.id} {...m} />
+       return <Menu deleteMenu={deleteMenu} key={m.id} {...m} />
       })}
     </div>
   )
