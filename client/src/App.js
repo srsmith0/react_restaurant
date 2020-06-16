@@ -10,7 +10,7 @@ function App() {
   const [menus, setMenus] = useState([])
 
   useEffect(() => {
-    axios.get('/api/menus')
+    axios.get('api/menus')
     .then((res) => {
     setMenus(res.data);
     }).catch((err) => {
@@ -19,13 +19,15 @@ function App() {
   }, []);
 
 function deleteMenu(id) {
-  axios.delete(`/api/menus/${id}`)
-  .then(res => {
-    setMenus(menus.filter((m) => m.id !== res.data.id))
+  axios.delete(`api/menus/${id}`)
+  .then((res) => {
+   const newMenus = menus.filter((m) => m.id !== id);
+   setMenus(newMenus)
   })
   .catch((err) => {
     console.log(err)
   })
+  
 }
 
 function addMenu(menu) {
@@ -37,11 +39,19 @@ function addMenu(menu) {
   })
 }
 
+// function updateMenu (id) {
+//   axios.put(`api/menus/${id}`)
+//   .then((res) => {
+
+//   }).catch((err) => {
+//     console.log(err)
+//   })
+// }
 
   return (
     <div>
       <h1>Menus</h1>
-      <MenuList menus={menus} deleteMenu={deleteMenu} />
+      <MenuList menus={menus}  deleteMenu={deleteMenu} />
       <p>Add a menu</p>
       <MenuForm addMenu={addMenu}/>
     </div>

@@ -6,7 +6,8 @@ const MenuForm =({addMenu}) => {
   const [menu, setMenu] = useState('');
 
   function handleSubmit (e) {
-    addMenu(menu)
+    addMenu(menu);
+    setMenu('')
   };
 
   const handleChange=(e) => {

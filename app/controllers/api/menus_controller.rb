@@ -12,13 +12,6 @@ class Api::MenusController < ApplicationController
     end
   end
 
-  def update
-    menu = Menu.find(params[:id])
-    menu.update(complete: !menu.update)
-    render json: menu
-  end
-
-
   def destroy
     Menu.find(params[:id]).destroy
 

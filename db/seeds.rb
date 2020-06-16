@@ -9,4 +9,10 @@
 Menu.create(name:"Breakfast")
 Menu.create(name:"Dinner")
 
+# Item.create(name: "Oatmeal" , price: 1.99,  menu_id: 1)
+# Item.create(name: "Breakfast Burrito",  price: 4.99,  menu_id: 1)
+# Item.create(name: "Pancakges", price: 2.99, menu_id: 1)
+# Item.create(name: "Tacos", price: 5.99, menu_id: 2)
+# Item.create(name: "Bahn Mi", price: 4.99, menu_id: 2)
+
 puts "seeded!"
